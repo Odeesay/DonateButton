@@ -183,7 +183,7 @@
     background-color: #31a372;
 }
 
-@media (max-width: 500px){
+@media (max-width: 400px){
     .button__cont {
         width: 150px;
         height: 150px;
