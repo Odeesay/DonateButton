@@ -3,12 +3,9 @@ let detect = new MobileDetect(window.navigator.userAgent)
 new ClipboardJS('.monobank__icon');
 new ClipboardJS('.privatbank__icon');
 
-console.log("userAgent: " + detect.userAgent());
-
 $('#donation__butt').click(function(){
     $('#donation__info__screen').slideDown();
     $('#donation__info__screen').css('display', 'flex');
-    
 })
 
 $('#donation__card-cross').click(function(){
@@ -19,6 +16,21 @@ $('#donation__card__accept-button').click(function(){
     $('#donation__info__screen').slideUp()
 })
 
+function tipCopied(){
+  tippy('#monobank__icon', {
+    content: "Скопійовано",
+    trigger: 'click',
+    animation: 'scale',
+    placement: 'bottom'
+  });
+
+  tippy('#privatbank__icon', {
+    content: "Скопійовано",
+    trigger: 'click',
+    animation: 'scale',
+    placement: 'bottom'
+  });
+}
 
 
   if(detect.mobile() === null){
@@ -38,13 +50,6 @@ $('#donation__card__accept-button').click(function(){
           animation: 'scale',
           placement: 'bottom'
         });
-
-      tippy('#monobank__icon', {
-        content: "Скопійовано",
-        trigger: 'click',
-        animation: 'scale',
-        placement: 'bottom'
-      });
     
       tippy('#privatbank__icon', {
         content: "Натисніть, щоб скопіювати",
@@ -52,13 +57,8 @@ $('#donation__card__accept-button').click(function(){
         followCursor: true
       });
     
-      tippy('#privatbank__icon', {
-        content: "Скопійовано",
-        trigger: 'click',
-        animation: 'scale',
-        placement: 'bottom'
-      });
-
+      tipCopied();
+      
 
       $('#qrCode__button').click(function(){
         $('#donation__card-text').slideToggle();
@@ -72,18 +72,5 @@ $('#donation__card__accept-button').click(function(){
       })
 
   }else{
-    tippy('#monobank__icon', {
-      content: "Скопійовано",
-      trigger: 'click',
-      animation: 'scale',
-      placement: 'bottom'
-    });
-
-    tippy('#privatbank__icon', {
-      content: "Скопійовано",
-      trigger: 'click',
-      animation: 'scale',
-      placement: 'bottom'
-    });
-
+    tipCopied()
   }
