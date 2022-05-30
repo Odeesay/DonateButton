@@ -1,6 +1,7 @@
-console.log(window);
-
+let detect = new MobileDetect(window.navigator.userAgent)
 new ClipboardJS('.monobank__icon');
+
+console.log("userAgent: " + detect.userAgent());
 
 $('#donation__butt').click(function(){
     $('#donation__info__screen').slideDown();
@@ -46,3 +47,9 @@ tippy('#donation__butt', {
     animation: 'scale',
     placement: 'bottom',
   });
+
+  if(detect.mobile() === null){
+    alert('compik')
+  }else{
+    alert('telefon')
+  }
