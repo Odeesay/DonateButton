@@ -1,4 +1,4 @@
-// console.log(window.clientInformation.platform);
+console.log(window);
 
 new ClipboardJS('.monobank__icon');
 
@@ -15,15 +15,6 @@ $('#donation__card-cross').click(function(){
 $('#donation__card__accept-button').click(function(){
     $('#donation__info__screen').slideUp()
 })
-
-// $('#donation__butt').mousemove(function(){
-//     $('#button__tip').css('display', 'flex')
-// })
-
-// $('#donation__butt').mouseleave(function(){
-//     $('#button__tip').css('display', 'none')
-// })
-
 
 tippy('#donation__butt', {
     content: "Натисніть, щоб дізнатися більше",
