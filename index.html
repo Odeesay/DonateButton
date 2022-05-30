@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js" integrity="sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    
+    <div class="wrap" id="wrap">
+        <div class="button__cont">
+            <div class="button__shade" id="button__shade">
+                <button class="donation__butt" id="donation__butt">Donate</button>
+            </div>
+            
+            <div class="button__tip" id="button__tip">
+                <p>4444 4444 4444 4444</p>
+            </div>
+        </div>
+    </div>
+    <div class="donation__info__screen" id="donation__info__screen">
+        <div class="donation__info__card" id="donation__info__card">
+            <div class="donation__card-icon" id="donation__card-icon"></div>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                Est accusamus quod, odio, possimus corporis numquam, laudantium excepturi autem voluptates fuga laboriosam? 
+                Id fugiat, dolore amet culpa atque quaerat incidunt, minus, ab sed accusantium asperiores facilis et? 
+                Quo, debitis quam nam officiis id excepturi, dolorum culpa suscipit sed illum fugiat a?
+                Натисніть на іконку потрібного вам банку, щоб скопіювати рахунок для донату
+            </p>
+            <div class="bank-icon__container" id="bank-icon__container">
+                <div class="bank__icon monobank__icon" id="monobank__icon" data-clipboard-text="4444 4444 4444 4444"></div>
+                <div class="bank__icon privatbank__icon" id="privatbank__icon"></div>
+            </div>
+            <button class="donation__card__accept-button" id="donation__card__accept-button">Зрозуміло</button>
+        </div>
+        <div class="donation__card-cross" id="donation__card-cross">X</div>
+    </div>
+
+    <div class="gowno"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
