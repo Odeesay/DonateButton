@@ -1,5 +1,6 @@
 let detect = new MobileDetect(window.navigator.userAgent)
 new ClipboardJS('.monobank__icon');
+new ClipboardJS('.privatbank__icon');
 
 console.log("userAgent: " + detect.userAgent());
 
@@ -17,39 +18,52 @@ $('#donation__card__accept-button').click(function(){
     $('#donation__info__screen').slideUp()
 })
 
-tippy('#donation__butt', {
-    content: "Натисніть, щоб дізнатися більше",
-    animation: 'scale'
-  });
 
-  tippy('#monobank__icon', {
-    content: "Натисніть, щоб скопіювати",
-    animation: 'scale',
-    followCursor: true
-  });
-
-  tippy('#monobank__icon', {
-    content: "Скопійовано",
-    trigger: 'click',
-    animation: 'scale',
-    placement: 'bottom',
-  });
-
-  tippy('#privatbank__icon', {
-    content: "Натисніть, щоб скопіювати",
-    animation: 'scale',
-    followCursor: true
-  });
-
-  tippy('#privatbank__icon', {
-    content: "Скопійовано",
-    trigger: 'click',
-    animation: 'scale',
-    placement: 'bottom',
-  });
 
   if(detect.mobile() === null){
-    alert('compik')
+      tippy('#donation__butt', {
+        content: "Натисніть, щоб дізнатися більше",
+        animation: 'scale'
+      });
+    
+      tippy('#monobank__icon', {
+        content: "Натисніть, щоб скопіювати",
+        animation: 'scale',
+        followCursor: true
+      });
+    
+      tippy('#monobank__icon', {
+        content: "Скопійовано",
+        trigger: 'click',
+        animation: 'scale',
+        placement: 'bottom'
+      });
+    
+      tippy('#privatbank__icon', {
+        content: "Натисніть, щоб скопіювати",
+        animation: 'scale',
+        followCursor: true
+      });
+    
+      tippy('#privatbank__icon', {
+        content: "Скопійовано",
+        trigger: 'click',
+        animation: 'scale',
+        placement: 'bottom'
+      });
   }else{
-    alert('telefon')
+    tippy('#monobank__icon', {
+      content: "Скопійовано",
+      trigger: 'click',
+      animation: 'scale',
+      placement: 'bottom'
+    });
+
+    tippy('#privatbank__icon', {
+      content: "Скопійовано",
+      trigger: 'click',
+      animation: 'scale',
+      placement: 'bottom'
+    });
+
   }
