@@ -1,3 +1,4 @@
+qrCodeClickCounter = 0;
 let detect = new MobileDetect(window.navigator.userAgent)
 new ClipboardJS('.monobank__icon');
 new ClipboardJS('.privatbank__icon');
@@ -31,7 +32,13 @@ $('#donation__card__accept-button').click(function(){
         animation: 'scale',
         followCursor: true
       });
-    
+
+        tippy('#qrCode__button', {
+          content: "Показати QR код",
+          animation: 'scale',
+          placement: 'bottom'
+        });
+
       tippy('#monobank__icon', {
         content: "Скопійовано",
         trigger: 'click',
@@ -51,6 +58,19 @@ $('#donation__card__accept-button').click(function(){
         animation: 'scale',
         placement: 'bottom'
       });
+
+
+      $('#qrCode__button').click(function(){
+        $('#donation__card-text').slideToggle();
+        if(qrCodeClickCounter === 0){
+          $('#qrCode__icon').css('display', 'block');
+          qrCodeClickCounter = 1;
+        }else{
+          $('#qrCode__icon').css('display', 'none');
+          qrCodeClickCounter = 0;
+        }
+      })
+
   }else{
     tippy('#monobank__icon', {
       content: "Скопійовано",
