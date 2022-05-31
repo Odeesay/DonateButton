@@ -1,4 +1,11 @@
-qrCodeClickCounter = 0;
+let qrCodeClickCounter = 0;
+const copiedTippy = tippy('#qrCode__button', {
+  placement: 'bottom',
+  theme: 'clean'
+})[0];
+
+copiedTippy.setContent('Показати Qr код')
+
 let detect = new MobileDetect(window.navigator.userAgent)
 new ClipboardJS('.monobank__icon');
 new ClipboardJS('.privatbank__icon');
@@ -32,8 +39,9 @@ function tipCopied(){
   });
 }
 
-
   if(detect.mobile() === null){
+    qrCodeClickCounter = 0;
+
       tippy('#donation__butt', {
         content: "Натисніть, щоб дізнатися більше",
         animation: 'scale'
@@ -45,19 +53,6 @@ function tipCopied(){
         followCursor: true
       });
 
-      tippy('#qrCode__button', {
-        content: "Показати QR код",
-        animation: 'scale',
-        placement: 'bottom'
-      });
-    
-
-      // tippy('#qrCode__button', {
-      //   content: "Сховати QR код",
-      //   animation: 'scale',
-      //   placement: 'bottom'
-      // });
-
       tippy('#privatbank__icon', {
         content: "Натисніть, щоб скопіювати",
         animation: 'scale',
@@ -66,19 +61,19 @@ function tipCopied(){
     
       tipCopied();
       
-
       $('#qrCode__button').click(function(){
-        console.log(qrCodeClickCounter)
+        
         $('#donation__card-text').slideToggle();
         if(qrCodeClickCounter === 0){
           $('#qrCode__icon').css('display', 'block');
           qrCodeClickCounter = 1;
+          copiedTippy.setContent('Сховати Qr код')
         }else{
           $('#qrCode__icon').css('display', 'none');
           qrCodeClickCounter = 0;
+          copiedTippy.setContent('Показати Qr код')
         }
       })
-
   }else{
     tipCopied()
   }
