@@ -45,12 +45,19 @@ function tipCopied(){
         followCursor: true
       });
 
-        tippy('#qrCode__button', {
-          content: "Показати QR код",
-          animation: 'scale',
-          placement: 'bottom'
-        });
+      tippy('#qrCode__button', {
+        content: "Показати QR код",
+        animation: 'scale',
+        placement: 'bottom'
+      });
     
+
+      // tippy('#qrCode__button', {
+      //   content: "Сховати QR код",
+      //   animation: 'scale',
+      //   placement: 'bottom'
+      // });
+
       tippy('#privatbank__icon', {
         content: "Натисніть, щоб скопіювати",
         animation: 'scale',
@@ -61,6 +68,7 @@ function tipCopied(){
       
 
       $('#qrCode__button').click(function(){
+        console.log(qrCodeClickCounter)
         $('#donation__card-text').slideToggle();
         if(qrCodeClickCounter === 0){
           $('#qrCode__icon').css('display', 'block');
