@@ -1,10 +1,10 @@
 let qrCodeClickCounter = 0;
-const copiedTippy = tippy('#qrCode__button', {
+const QrButton = tippy('#qrCode__button', {
   placement: 'bottom',
   theme: 'clean'
 })[0];
 
-copiedTippy.setContent('Показати Qr код')
+QrButton.setContent('Показати Qr код')
 
 let detect = new MobileDetect(window.navigator.userAgent)
 new ClipboardJS('.monobank__icon');
@@ -28,14 +28,24 @@ function tipCopied(){
     content: "Скопійовано",
     trigger: 'click',
     animation: 'scale',
-    placement: 'bottom'
+    placement: 'bottom',
+    onShow(instance) {
+      setTimeout(() => {
+        instance.hide();
+      }, 1500);
+    }
   });
 
   tippy('#privatbank__icon', {
     content: "Скопійовано",
     trigger: 'click',
     animation: 'scale',
-    placement: 'bottom'
+    placement: 'bottom',
+    onShow(instance) {
+      setTimeout(() => {
+        instance.hide();
+      }, 1500);
+    }
   });
 }
 
@@ -67,11 +77,11 @@ function tipCopied(){
         if(qrCodeClickCounter === 0){
           $('#qrCode__icon').css('display', 'block');
           qrCodeClickCounter = 1;
-          copiedTippy.setContent('Сховати Qr код')
+          QrButton.setContent('Сховати Qr код')
         }else{
           $('#qrCode__icon').css('display', 'none');
           qrCodeClickCounter = 0;
-          copiedTippy.setContent('Показати Qr код')
+          QrButton.setContent('Показати Qr код')
         }
       })
   }else{
